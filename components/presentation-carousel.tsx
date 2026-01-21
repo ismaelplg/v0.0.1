@@ -222,15 +222,15 @@ export function PresentationCarousel() {
             )}
 
             {slide.type === "tasks" && (
-              <div className="w-full">
-                <h2 className="mb-3 sm:mb-6 text-center text-xl sm:text-2xl md:text-3xl font-semibold text-foreground">
+              <div className="w-full flex flex-col h-full justify-center">
+                <h2 className="mb-4 sm:mb-6 text-center text-xl sm:text-2xl md:text-3xl font-semibold text-foreground">
                   {slide.content.title}
                 </h2>
-                <div className="space-y-1.5 sm:space-y-3">
+                <div className="space-y-2 sm:space-y-3">
                   {slide.content.tasks.map((task: { name: string; hours: string; status: string }, index: number) => (
                     <div
                       key={index}
-                      className="flex items-center justify-between rounded-lg bg-muted/50 px-2 sm:px-4 py-2 sm:py-3"
+                      className="flex items-center justify-between rounded-lg bg-muted/50 px-3 sm:px-4 py-2.5 sm:py-3"
                     >
                       <div className="flex items-center gap-2 sm:gap-3">
                         <span className="flex h-5 w-5 sm:h-6 sm:w-6 shrink-0 items-center justify-center rounded-full bg-primary text-[10px] sm:text-xs text-primary-foreground">
@@ -253,7 +253,7 @@ export function PresentationCarousel() {
                     </div>
                   ))}
                 </div>
-                <div className="mt-3 sm:mt-6 flex justify-end border-t border-border pt-2 sm:pt-4">
+                <div className="mt-4 sm:mt-6 flex justify-end border-t border-border pt-3 sm:pt-4">
                   <div className="font-mono text-xs sm:text-sm text-muted-foreground">
                     Total: <span className="text-foreground">{slide.content.total.days}</span> /{" "}
                     <span className="text-foreground">{slide.content.total.hours}</span>
@@ -292,30 +292,30 @@ export function PresentationCarousel() {
             )}
 
             {slide.type === "swapping" && (
-              <div className="w-full max-w-lg text-center">
-                <h2 className="mb-1 sm:mb-2 text-xl sm:text-2xl md:text-3xl font-semibold text-foreground">
+              <div className="w-full max-w-lg text-center flex flex-col h-full justify-center">
+                <h2 className="mb-2 sm:mb-3 text-xl sm:text-2xl md:text-3xl font-semibold text-foreground">
                   {slide.content.title}
                 </h2>
-                <p className="mb-2 sm:mb-4 font-mono text-sm sm:text-lg md:text-xl text-primary">
+                <p className="mb-3 sm:mb-4 font-mono text-sm sm:text-lg md:text-xl text-primary">
                   {slide.content.subtitle}
                 </p>
-                <p className="mb-3 sm:mb-6 text-xs sm:text-sm md:text-base text-muted-foreground">
+                <p className="mb-4 sm:mb-6 text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">
                   {slide.content.description}
                 </p>
-                <div className="mb-3 sm:mb-6 space-y-1.5 sm:space-y-2">
+                <div className="mb-4 sm:mb-6 space-y-2 sm:space-y-2.5">
                   {slide.content.features.map((feature: string, index: number) => (
                     <div
                       key={index}
-                      className="flex items-center gap-2 sm:gap-3 rounded-lg bg-muted/50 px-2 sm:px-4 py-1.5 sm:py-2"
+                      className="flex items-center gap-3 sm:gap-3 rounded-lg bg-muted/50 px-3 sm:px-4 py-2.5 sm:py-2.5"
                     >
-                      <span className="flex h-4 w-4 sm:h-5 sm:w-5 shrink-0 items-center justify-center rounded-full bg-primary text-[10px] sm:text-xs text-primary-foreground">
+                      <span className="flex h-5 w-5 sm:h-5 sm:w-5 shrink-0 items-center justify-center rounded-full bg-primary text-[10px] sm:text-xs text-primary-foreground">
                         {index + 1}
                       </span>
                       <span className="text-xs sm:text-sm text-foreground text-left">{feature}</span>
                     </div>
                   ))}
                 </div>
-                <div className="rounded-lg border border-primary/30 bg-primary/5 px-3 sm:px-4 py-1.5 sm:py-2">
+                <div className="rounded-lg border border-primary/30 bg-primary/5 px-3 sm:px-4 py-2.5 sm:py-3">
                   <p className="text-[10px] sm:text-xs text-muted-foreground">Deploy estimado</p>
                   <p className="font-mono text-xs sm:text-sm font-medium text-foreground">
                     {slide.content.deployDate}
@@ -325,30 +325,30 @@ export function PresentationCarousel() {
             )}
 
             {slide.type === "tesoreria" && (
-              <div className="w-full max-w-lg text-center">
-                <h2 className="mb-1 sm:mb-2 text-xl sm:text-2xl md:text-3xl font-semibold text-foreground">
+              <div className="w-full max-w-lg text-center flex flex-col h-full justify-center">
+                <h2 className="mb-2 sm:mb-3 text-xl sm:text-2xl md:text-3xl font-semibold text-foreground">
                   {slide.content.title}
                 </h2>
-                <p className="mb-2 sm:mb-4 font-mono text-sm sm:text-lg md:text-xl text-primary">
+                <p className="mb-3 sm:mb-4 font-mono text-sm sm:text-lg md:text-xl text-primary">
                   {slide.content.subtitle}
                 </p>
-                <p className="mb-3 sm:mb-6 text-xs sm:text-sm md:text-base text-muted-foreground">
+                <p className="mb-4 sm:mb-6 text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">
                   {slide.content.description}
                 </p>
-                <div className="mb-3 sm:mb-6 space-y-1.5 sm:space-y-2">
+                <div className="mb-4 sm:mb-6 space-y-2 sm:space-y-2.5">
                   {slide.content.features.map((feature: string, index: number) => (
                     <div
                       key={index}
-                      className="flex items-center gap-2 sm:gap-3 rounded-lg bg-muted/50 px-2 sm:px-4 py-1.5 sm:py-2"
+                      className="flex items-center gap-3 sm:gap-3 rounded-lg bg-muted/50 px-3 sm:px-4 py-2.5 sm:py-2.5"
                     >
-                      <span className="flex h-4 w-4 sm:h-5 sm:w-5 shrink-0 items-center justify-center rounded-full bg-primary text-[10px] sm:text-xs text-primary-foreground">
+                      <span className="flex h-5 w-5 sm:h-5 sm:w-5 shrink-0 items-center justify-center rounded-full bg-primary text-[10px] sm:text-xs text-primary-foreground">
                         {index + 1}
                       </span>
                       <span className="text-xs sm:text-sm text-foreground text-left">{feature}</span>
                     </div>
                   ))}
                 </div>
-                <div className="rounded-lg border border-primary/30 bg-primary/5 px-3 sm:px-4 py-1.5 sm:py-2">
+                <div className="rounded-lg border border-primary/30 bg-primary/5 px-3 sm:px-4 py-2.5 sm:py-3">
                   <p className="text-[10px] sm:text-xs text-muted-foreground">Deploy estimado</p>
                   <p className="font-mono text-xs sm:text-sm font-medium text-foreground">
                     {slide.content.deployDate}
