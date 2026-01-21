@@ -4,7 +4,8 @@ import { useState } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-const slides = [
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const slides: Array<{ id: number; type: string; content: any }> = [
   {
     id: 1,
     type: "title",
@@ -226,7 +227,7 @@ export function PresentationCarousel() {
                   {slide.content.title}
                 </h2>
                 <div className="space-y-3">
-                  {slide.content.tasks.map((task, index) => (
+                  {slide.content.tasks.map((task: { name: string; hours: string; status: string }, index: number) => (
                     <div
                       key={index}
                       className="flex items-center justify-between rounded-lg bg-muted/50 px-4 py-3"
