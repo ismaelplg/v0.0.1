@@ -12,8 +12,8 @@ const slides: Array<{ id: number; type: string; content: any }> = [
     content: {
       title: "WirebitApp",
       version: "v0.0.1",
-      dates: "Jan 21 - Jan 30, 2026",
-      teamLead: "Ezequiel",
+      dates: "",
+      teamLead: "Ezequiel Bello",
     },
   },
   {
