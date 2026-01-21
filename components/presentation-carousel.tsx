@@ -140,8 +140,8 @@ export function PresentationCarousel() {
     <div className="flex min-h-screen flex-col items-center justify-center bg-background p-2 sm:p-4 md:p-8">
       <div className="relative w-full max-w-4xl px-8 sm:px-10 md:px-0">
         {/* Slide Container */}
-        <div className="aspect-[3/4] sm:aspect-[4/3] md:aspect-[16/9] w-full overflow-hidden rounded-xl sm:rounded-2xl border border-border bg-card shadow-lg">
-          <div className="flex h-full flex-col items-center justify-center overflow-y-auto p-4 sm:p-6 md:p-16">
+        <div className="min-h-[65vh] sm:min-h-0 sm:aspect-[4/3] md:aspect-[16/9] w-full overflow-hidden rounded-xl sm:rounded-2xl border border-border bg-card shadow-lg">
+          <div className="flex h-full min-h-[65vh] sm:min-h-0 flex-col items-center justify-center p-5 sm:p-6 md:p-16">
             {slide.type === "title" && (
               <div className="text-center">
                 <img
